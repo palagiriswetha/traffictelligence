@@ -3,10 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Traffic Volume Prediction</title>
+    <style>
+        /* Reset styles for html and body to ensure full viewport height and no scrollbars */
+        /* --- MODIFICATION HERE: Changed color to black for general text --- */
+        html, body {
+            height: 100vh; /* 100% of the viewport height */
+            margin: 0;    /* Remove default browser margins */
+            padding: 0;   /* Remove default browser padding */
+            overflow: hidden; /* Helps prevent scrollbars if content slightly overflows */
+            font-family: sans-serif; /* Apply font family to entire page */
+            /* --- MODIFICATION HERE: Change color to black for general text --- */
+            color: black; /* Apply text color to entire page - Changed to BLACK */
+            text-align: center; /* Center all block-level text content by default */
+        }
+
+        body {
+            /* --- CRITICAL MODIFICATION: Changed filename to .jpg --- */
+            background-image: url("https://detailedvehiclehistory.com/wp-content/uploads/sites/3/2023/04/2023-jaguar-xf-sedan-front-1663006302.jpg"); /* Changed from ccc.png to ccc.jpg */
+            background-size: 1100px;       /* Scales image to cover the entire background area,
+                                            cropping if aspect ratios don't match (as seen in your pics) */
+            background-repeat: no-repeat; /* Prevents the image from tiling */
+            background-position: center;  /* Centers the image within the background area */
+            
+            /* No padding-top needed here, as text elements will have their own margins */
+            /* position: relative is not strictly needed on body if no children are absolutely positioned */
+        }
+
+        /* Style for the main "Traffic volume estimation" title */
+        .main-title {
+            font-style: sans-serif; /* Use a serif font for the title */
+            font-size: 2.5em; /* Adjust font size to match your screenshot */
+            margin-top: 70px; /* Space from the very top of the page */
+            margin-bottom: 10px; /* Space below the title */
+            font-weight: medium; /* Make it medium weight as in your screenshots */
+            /* --- MODIFICATION HERE: Explicitly set color to black --- */
+            color: black; /* Ensure this specific element is black */
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.7); /* Adds readability over the image - changed shadow to white for contrast */
+            display: block; /* Ensure it takes its own line */
+            line-height: 1.2; /* Adjust line height for better appearance */
+        }
+
+        /* Style for the "Estimated Traffic Volume is: [value]" text */
+        .estimated-volume-text {
+            font-size: 1em; /* Adjust font size to match your screenshot */
+            margin-top: 50; /* No top margin, let main-title's margin-bottom handle spacing */
+            margin-bottom: 20px; /* Space below this text */
+            /* --- MODIFICATION HERE: Explicitly set color to black --- */
+            color: black; /* Ensure this specific element is black */
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Adds readability - changed shadow to white for contrast */
+            display: block;
+        }
+
+        /* --- REMOVED .result-box CSS and its content from HTML --- */
+        /*
+        .result-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            
+            // Positioning for the box would go here if it were included
+            // position: absolute;
+            // top: 50%;
+            // left: 65%;
+            // transform: translate(-50%, -50%);
+            // text-align: center;
+            // min-width: 250px;
+        }
+
+        a {
+            color: #00f7ff;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        */
+    </style>
 </head>
 <body>
-    <h1>Prediction Result</h1>
-    <p>{{ prediction_text }}</p>
-    <a href="/">Predict Again</a>
+    <h1 class="main-title">Traffic volume estimation</h1>
+
+    <p class="estimated-volume is-text">{{ prediction_text }}</p>
+
+
 </body>
 </html>
